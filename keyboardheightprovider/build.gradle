@@ -1,35 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-ext {
-    bintrayRepo = 'Android'
-    bintrayName = 'KeyboardHeightProvider'
-
-    publishedGroupId = 'com.hold1'
-    pomLibraryName = bintrayName
-
-    libraryDescription = 'Keyboard detection library.'
-
-    siteUrl = 'https://github.com/Crysis21/KeyboardHeightProvider'
-    gitUrl = 'https://github.com/Crysis21/KeyboardHeightProvider.git'
-
-    libraryVersion = android.defaultConfig.versionName
-
-    developerId = 'crysis21'
-    developerName = 'Cristian Holdunu'
-    developerEmail = 'cristian.holdunu@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-
-group = publishedGroupId
-project.archivesBaseName = 'keyboardheightprovider'
-version = '0.0.9'
-
-
 buildscript {
     repositories {
         jcenter()
@@ -38,9 +9,6 @@ buildscript {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
-
-apply plugin: 'com.jfrog.bintray'
-
 
 android {
     compileSdkVersion 28
@@ -76,43 +44,6 @@ dependencies {
 
 }
 
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                groupId publishedGroupId
-
-                name pomLibraryName
-                description libraryDescription
-                url siteUrl
-
-                licenses {
-                    license {
-                        name licenseName
-                        url licenseUrl
-                    }
-                }
-                developers {
-                    developer {
-                        id developerId
-                        name developerName
-                        email developerEmail
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-
-                }
-            }
-        }
-    }
-}
-
-
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
@@ -120,28 +51,6 @@ task sourcesJar(type: Jar) {
 
 artifacts {
     archives sourcesJar
-}
-
-
-bintray {
-    configurations = ['archives']
-
-    pkg {
-        repo = bintrayRepo
-        name = bintrayName
-        userOrg = developerId
-        desc = libraryDescription
-        licenses = allLicenses
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        publish = true
-        publicDownloadNumbers = true
-        version {
-            desc = libraryDescription
-            vcsTag = version
-            released = new Date()
-        }
-    }
 }
 
 repositories {
