@@ -1,4 +1,5 @@
-# Keyboard Height Provider
+# Keyboard Height Provider (reborn from the ashes)
+# AsynctaskCoffee
 Getting keyboard height in android it's a pain in the ass. For activities where soft input mode is `adjustResize`, you can set up an `OnGlobalLayoutListener` and measure how the activity window is resized, to make room for the keyboard.
 
 For other modes of soft input mode, you're out of luck. As the android brick-heads refuse to solve this problem even after 28 iterations of SDK development, someone came with a cool solution:
@@ -10,17 +11,20 @@ For other modes of soft input mode, you're out of luck. As the android brick-hea
 Add the following repo to your project
 
 ```gradle
-    repositories {
-        maven {
-            url  "https://dl.bintray.com/crysis21/Android"
-        }
-    }
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 
 Add the following dependency to your project:
 
 ```gradle
-    implementation 'com.hold1:keyboardheightprovider:0.0.9'
+    dependencies {
+	    implementation 'com.github.AsynctaskCoffee:KeyboardHeightProvider:1.0.2-Egemen'
+    }
 ```
 
 ## Usage
