@@ -1,4 +1,7 @@
 # Keyboard Height Provider (reborn from the ashes)
+
+This project was unstable and was giving build error because of publishing method. I ve changed it into jitpack. You can use it now.
+
 # AsynctaskCoffee
 Getting keyboard height in android it's a pain in the ass. For activities where soft input mode is `adjustResize`, you can set up an `OnGlobalLayoutListener` and measure how the activity window is resized, to make room for the keyboard.
 
