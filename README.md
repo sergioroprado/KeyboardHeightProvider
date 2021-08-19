@@ -26,7 +26,7 @@ Add the following dependency to your project:
 
 ```gradle
     dependencies {
-	    implementation 'com.github.AsynctaskCoffee:KeyboardHeightProvider:1.0.2-Egemen'
+	    implementation 'com.github.sergioroprado:KeyboardHeightProvider:1.0.4-Egemen'
     }
 ```
 
