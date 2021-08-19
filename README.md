@@ -1,4 +1,4 @@
-# Keyboard Height Provider (Withiout AndroidX dependencies)
+# Keyboard Height Provider (Without AndroidX dependencies)
 
 Some old projects that haven't migrated to AndroidX and that depends of KeyboardHeightProvider, will fail to compile because the original KeyboardHeightProvider from Crysis21 migrated it to AndroidX. This version is compatible with these projects.
 
